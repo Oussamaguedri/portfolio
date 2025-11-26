@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* === Global Base Styles === */
+@layer base {
+  html {
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-color: #fafafa; /* Light Mode Hintergrund */
+    color: #140303; /* Light Mode Text */
+  }
+}
+
+/* Dark mode base body colors */
+@layer base {
+  .dark body {
+    background-color: #0a0a0a;
+    color: #fafafa;
+  }
+}
+
+/* (Deine weiteren Utilities und Animationen bleiben hier; unverändert) */
+
+/* === Animation FadeInUp === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility Klasse für FadeInUp-Effekt */
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
